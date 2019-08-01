@@ -1,0 +1,45 @@
+
+spring:
+    profiles: local
+    datasource:
+        url: jdbc:mysql://127.0.0.1:3306/translationfb?reconnect=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
+        password: password
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+       # open-in-view: false
+        hibernate:
+            ddl-auto: update # validate #
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+
+#---
+#
+#spring:
+#    profiles: local-heroku
+#    datasource:
+#        platform:
+#        url: jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/heroku_884cbef5c97b2c4?reconnect=true
+#        username: b61809904eef7c
+#        password: bc4e0836
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#    jpa:
+#        hibernate:
+#            ddl-auto: validate # update #
+#        properties:
+#            hibernate:
+#                dialect: org.hibernate.dialect.MySQL5Dialect
+
+---
+
+spring:
+    profiles: heroku
+    jpa:
+        hibernate:
+            ddl-auto: validate # update #
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
