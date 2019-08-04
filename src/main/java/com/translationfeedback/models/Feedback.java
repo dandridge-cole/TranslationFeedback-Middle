@@ -18,7 +18,9 @@ public class Feedback {
     private Integer fragmentIndexStart;
     private Integer fragmentIndexEnd;
 
-    private String content;
+    private Boolean approved;
+    private String suggestion;
+    private String description;
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
@@ -30,6 +32,10 @@ public class Feedback {
     public void setFragmentIndexStart(Integer fragmentIndexStart) {this.fragmentIndexStart = fragmentIndexStart;}
     public Integer getFragmentIndexEnd() {return fragmentIndexEnd;}
     public void setFragmentIndexEnd(Integer fragmentIndexEnd) {this.fragmentIndexEnd = fragmentIndexEnd;}
-    public String getContent() {return content;}
-    public void setContent(String content) {this.content = content;}
+    public Boolean getApproved() {return approved;}
+    public void setApproved(Boolean approved) {this.approved = approved;}
+    public String getSuggestion() {return suggestion;}
+    public void setSuggestion(String suggestion) {this.suggestion = suggestion;}
+    public String getDescription() {return description;}
+    public void setDescription(String description) {this.description = description;}
 }

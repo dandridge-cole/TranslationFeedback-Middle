@@ -17,5 +17,5 @@ public class LanguageService {
 
     public Language addLanguage(Language language){return this.languageRepository.save(language);}
     public List<Language> getLanguagesListAll(){return this.languageRepository.findAll();}
-
+    Language getLanguageByName(String name){return this.languageRepository.getByName(name);}
 }

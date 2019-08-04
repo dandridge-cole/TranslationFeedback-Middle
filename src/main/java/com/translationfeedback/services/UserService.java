@@ -24,4 +24,8 @@ public class UserService {
     public User authenticateUser(User user){
         return this.userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
     }
+
+    public User getUserById(Long id){
+        return this.userRepository.getById(id);
+    }
 }
