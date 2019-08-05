@@ -1,5 +1,6 @@
 package com.translationfeedback.services;
 
+import com.translationfeedback.models.Language;
 import com.translationfeedback.models.User;
 import com.translationfeedback.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,13 @@ import java.util.List;
 public class UserService {
 
     private UserRepository userRepository;
+    private LanguageService languageService;
 
     @Autowired
-    private UserService(UserRepository userRepository){this.userRepository=userRepository;}
+    private UserService(UserRepository userRepository, LanguageService languageService){
+        this.userRepository=userRepository;
+        this.languageService=languageService;
+    }
 
     public List<User> getAllUsers(){return this.userRepository.findAll();}
 
@@ -28,4 +33,9 @@ public class UserService {
     public User getUserById(Long id){
         return this.userRepository.getById(id);
     }
+
+//    public List<User> getUsersByLang(String lang){
+//        Language language=this.languageService.getLanguageByName(lang);
+//        return this.userRepository.getByLang(language);
+//    }
 }
