@@ -6,11 +6,11 @@ spring:
         username: root
         password: password
         driver-class-name: com.mysql.cj.jdbc.Driver
-    tomcat:
-        max-wait: 20000
-        max-active: 50
-        max-idle: 20
-        min-idle: 15
+#    tomcat:
+#        max-wait: 20000
+#        max-active: 50
+#        max-idle: 20
+#        min-idle: 15
     jpa:
        # open-in-view: false
         hibernate:
@@ -18,27 +18,27 @@ spring:
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL5Dialect
-                format_sql: true
-                    id:
-                        new_generator_mappings: false
+#                format_sql: true
+#                    id:
+#                        new_generator_mappings: false
 
-#---
-#
-#spring:
-#    profiles: local-heroku
-#    datasource:
-#        platform:
-#        url: jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/heroku_884cbef5c97b2c4?reconnect=true
-#        username: b61809904eef7c
-#        password: bc4e0836
-#        driver-class-name: com.mysql.cj.jdbc.Driver
-#
-#    jpa:
-#        hibernate:
-#            ddl-auto: validate # update #
-#        properties:
-#            hibernate:
-#                dialect: org.hibernate.dialect.MySQL5Dialect
+---
+
+spring:
+    profiles: local-heroku
+    datasource:
+        platform:
+        url: jdbc:mysql://us-cdbr-iron-east-02:cleardb:net/heroku_05bd9aee5cba4b2?reconnect=true
+        username: be2066a12e8164
+        password: e0023cc3
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update # validate #
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
 
 ---
 

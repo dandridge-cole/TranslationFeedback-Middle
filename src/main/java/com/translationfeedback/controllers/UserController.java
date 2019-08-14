@@ -4,6 +4,7 @@ import com.translationfeedback.models.User;
 import com.translationfeedback.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+//import org.modelmapper.ModelMapper;
 
 import java.util.List;
 
@@ -11,11 +12,13 @@ import java.util.List;
 @CrossOrigin
 public class UserController {
 
+  //  private ModelMapper modelMapper;
     private UserService userService;
 
     @Autowired
-    public UserController(UserService userService){
+    public UserController(UserService userService/*, ModelMapper modelMapper*/){
         this.userService=userService;
+     //   this.modelMapper=modelMapper;
     }
 
     @GetMapping("/users")
